@@ -26,7 +26,7 @@ var togglePlay  = function () {
         return
     }
     var $overlay = $('#overlay');
-    console.log(Reveal.getProgress());
+
     if(isPlaying) { //pause
         $overlay.fadeIn();
         isPlaying = false;
@@ -53,6 +53,8 @@ $(VIDEO_TYPE)[0].onwaiting = togglePlay;
 //    }
 //};
 
+
+
 var slides = {
     0: {
         steps: [
@@ -65,10 +67,16 @@ var slides = {
     },
     1: {
         steps: [
-            { delay: 12, cmd: Reveal.next },
-            { delay: 44, cmd: Reveal.next },
-            { delay: 120, cmd: Reveal.next },
-            { delay: 180, cmd: Reveal.next }
+            { delay: 28, cmd: Reveal.next },
+            { delay: 88, cmd: Reveal.next},
+            { delay: 95, cmd: function () {
+                Reveal.next(); Reveal.next();
+            } },
+            { delay: 119, cmd: Reveal.next},
+            { delay: 124, cmd: Reveal.next },
+            { delay: 137, cmd: Reveal.next },
+            { delay: 149, cmd: Reveal.next },
+            { delay: 179, cmd: Reveal.next }
         ],
         mediaType: AUDIO_TYPE
     }
@@ -142,9 +150,12 @@ Reveal.addEventListener('slidechanged', function(e) {
     loadingMediaLoop(e.indexh);
 });
 
+Reveal.addEventListener('ready', function() {
+    $('.js-loader').hide();
+});
+
 Reveal.addEventListener('fragmentshown', function(e) {
     //var $el = $(e.fragment);
-
 });
 
 Reveal.addEventListener('fragmenthidden', function(e) {
