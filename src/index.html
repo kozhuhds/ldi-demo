@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>LDI Demo</title>
+
+</head>
+<body>
+<a id="overlay">
+    <div id="play">
+        <img src="img/play.png" height="200" width="200">
+        <div id="adjust" class="m-t">Click to play the presentation</div>
+    </div>
+</a>
+<audio id="audio-player">
+    <source src="data/page2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<div class="reveal">
+    <div class="slides">
+        <!-- slide 0 -->
+        <section>
+            <div class="video1-box">
+                <video id="video0" preload="auto">
+                    <source src="./data/steve1.mp4" type="video/mp4">
+                    This browser does not support the video tag.
+                </video>
+                <p class="fragment fade-in">Jim Smith</p>
+            </div>
+            <div class="logo-box">
+                <img src="img/gps-logo-horz.png" alt=""/>
+            </div>
+            <div class="right-col-sl-0">
+                <img src="img/company.png" class="fragment fade-in" alt="">
+                <img src="img/retirement_picture.png" class="m-t fragment fade-in" alt=""/>
+                <button class="btn m-t fragment fade-in next-btn">click here to get started</button>
+            </div>
+        </section>
+
+        <!-- slide 1 -->
+        <section class="centered-fragments">
+            <div class="fragment fade-in fragment-item-centered">
+                <div class="fragment fade-out">
+                    <img src="img/pic1.png" alt=""/>
+                    <h2><span class="strong-text">84%</span> of Americans have NEVER completed a retirement plan</h2>
+                </div>
+            </div>
+            <div class="fragment fade-in fragment-item-bottom">
+                <img src="img/arrow.png" class="inline" alt=""/>
+                <h2 class="inline">don’t be intimidated</h2>
+            </div>
+            <div class="fragment fade-in fragment-item-top">
+                <div class="fragment fade-out">
+                    <img src="img/pic3.png" alt=""/>
+                </div>
+            </div>
+
+            <div class="fragment fade-in fragment-item-top">
+                <div class="fragment fade-out">
+                    <img src="img/pic4.png" alt=""/>
+                </div>
+            </div>
+            <div class="fragment fade-in fragment-item-top">
+                <img src="img/pic2.png" alt=""/>
+            </div>
+
+            <button class="btn m-t fragment fade-in next-btn next-btn-r-b">continue</button>
+        </section>
+    </div>
+</div>
+<script src="app.js"></script>
+<link rel="stylesheet" href="main.css" />
+</body>
+</html>
