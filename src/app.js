@@ -1,12 +1,12 @@
 var Reveal = require('reveal.js');
-var $ = require('jquery');
+var $ = require('jbone');
 
 Reveal.initialize({
     width: 1000,
     height: 740,
     center: false,
     controls: false,
-    //history: true,
+    history: true,
     //keyboard: false
 });
 
@@ -28,12 +28,12 @@ var togglePlay  = function () {
     var $overlay = $('#overlay');
 
     if(isPlaying) { //pause
-        $overlay.fadeIn();
+        $overlay.css('display', 'block');
         isPlaying = false;
         changeMediaState('pause');
     } else{ //play
         changeMediaState('play');
-        $overlay.fadeOut();
+        $overlay.css('display', 'none');
         isPlaying = true;
         playLoop();
     }
@@ -77,6 +77,187 @@ var slides = {
             { delay: 137, cmd: Reveal.next },
             { delay: 149, cmd: Reveal.next },
             { delay: 179, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    2: {
+        steps: [
+            { delay: 30, cmd: Reveal.next },
+            { delay: 40, cmd: Reveal.next },
+            { delay: 52, cmd: Reveal.next },
+            { delay: 64, cmd: Reveal.next },
+            { delay: 68, cmd: Reveal.next },
+            { delay: 100, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    3: {
+        steps: [
+            { delay: 12, cmd: Reveal.next },
+            { delay: 24, cmd: Reveal.next },
+            { delay: 64, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    4: {
+        steps: [
+            { delay: 16, cmd: Reveal.next },
+            { delay: 36, cmd: Reveal.next },
+            { delay: 40, cmd: Reveal.next },
+            { delay: 44, cmd: Reveal.next },
+            { delay: 48, cmd: Reveal.next },
+            { delay: 52, cmd: Reveal.next },
+            { delay: 56, cmd: Reveal.next },
+            { delay: 76, cmd: Reveal.next },
+            { delay: 172, cmd: Reveal.next },
+            { delay: 184, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    5: {
+        steps: [
+            { delay: 36, cmd: Reveal.next },
+            { delay: 68, cmd: Reveal.next },
+            { delay: 72, cmd: Reveal.next },
+            { delay: 76, cmd: Reveal.next },
+            { delay: 80, cmd: Reveal.next },
+            { delay: 100, cmd: Reveal.next },
+            { delay: 140, cmd: Reveal.next },
+            { delay: 164, cmd: Reveal.next }
+
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    6: {
+        steps: [
+            { delay: 48, cmd: Reveal.next },
+            { delay: 60, cmd: Reveal.next },
+            { delay: 88, cmd: Reveal.next },
+            { delay: 112, cmd: Reveal.next },
+            { delay: 136, cmd: Reveal.next },
+            { delay: 140, cmd: Reveal.next }
+
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    7: {
+        steps: [
+            { delay: 36, cmd: Reveal.next },
+            { delay: 72, cmd: Reveal.next },
+            { delay: 76, cmd: Reveal.next }
+
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    8: {
+        steps: [
+            { delay: 28, cmd: Reveal.next },
+            { delay: 36, cmd: Reveal.next },
+            { delay: 64, cmd: Reveal.next },
+            { delay: 120, cmd: Reveal.next },
+            { delay: 156, cmd: Reveal.next },
+            { delay: 212, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    9: {
+        steps: [
+            { delay: 8, cmd: Reveal.next },
+            { delay: 56, cmd: Reveal.next },
+            { delay: 80, cmd: Reveal.next },
+            { delay: 84, cmd: Reveal.next },
+            { delay: 86, cmd: Reveal.next },
+            { delay: 128, cmd: Reveal.next },
+            { delay: 136, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    10: {
+        steps: [
+            { delay: 24, cmd: Reveal.next },
+            { delay: 28, cmd: Reveal.next },
+            { delay: 32, cmd: Reveal.next },
+            { delay: 36, cmd: Reveal.next },
+            { delay: 40, cmd: Reveal.next },
+            { delay: 84, cmd: Reveal.next },
+            { delay: 128, cmd: Reveal.next },
+            { delay: 132, cmd: Reveal.next },
+            { delay: 180, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    11: {
+        steps: [
+            { delay: 36, cmd: Reveal.next },
+            { delay: 44, cmd: Reveal.next },
+            { delay: 76, cmd: Reveal.next },
+            { delay: 108, cmd: Reveal.next },
+            { delay: 136, cmd: Reveal.next },
+            { delay: 168, cmd: Reveal.next },
+            { delay: 188, cmd: Reveal.next },
+            { delay: 204, cmd: Reveal.next },
+            { delay: 220, cmd: Reveal.next },
+            { delay: 304, cmd: Reveal.next },
+            { delay: 305, cmd: Reveal.next },
+            { delay: 372, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    12: {
+        steps: [
+            { delay: 44, cmd: Reveal.next },
+            { delay: 52, cmd: Reveal.next },
+            { delay: 84, cmd: Reveal.next },
+            { delay: 104, cmd: Reveal.next },
+            { delay: 124, cmd: Reveal.next },
+            { delay: 140, cmd: Reveal.next },
+            { delay: 196, cmd: Reveal.next },
+            { delay: 232, cmd: Reveal.next },
+            { delay: 256, cmd: Reveal.next },
+            { delay: 268, cmd: Reveal.next },
+            { delay: 280, cmd: Reveal.next },
+            { delay: 296, cmd: Reveal.next },
+            { delay: 308, cmd: Reveal.next },
+            { delay: 320, cmd: Reveal.next },
+            { delay: 352, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    13: {
+        steps: [
+            { delay: 144, cmd: Reveal.next },
+            { delay: 157, cmd: Reveal.next },
+            { delay: 161, cmd: Reveal.next }
+
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    14: {
+        steps: [
+            { delay: 28, cmd: Reveal.next },
+            { delay: 56, cmd: Reveal.next },
+            { delay: 76, cmd: Reveal.next },
+            { delay: 92, cmd: Reveal.next },
+            { delay: 124, cmd: Reveal.next },
+            { delay: 192, cmd: Reveal.next },
+            { delay: 232, cmd: Reveal.next },
+            { delay: 284, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    15: {
+        steps: [
+            { delay: 24, cmd: Reveal.next },
+            { delay: 44, cmd: Reveal.next },
+            { delay: 56, cmd: Reveal.next },
+            { delay: 104, cmd: Reveal.next }
+        ],
+        mediaType: AUDIO_TYPE
+    },
+    16: {
+        steps: [
+            { delay: 2, cmd: Reveal.next },
+            { delay: 132, cmd: Reveal.next }
         ],
         mediaType: AUDIO_TYPE
     }
@@ -151,16 +332,16 @@ Reveal.addEventListener('slidechanged', function(e) {
 });
 
 Reveal.addEventListener('ready', function() {
-    $('.js-loader').hide();
+    $('.js-loader').css('display', 'none');
 });
 
-Reveal.addEventListener('fragmentshown', function(e) {
-    //var $el = $(e.fragment);
-});
-
-Reveal.addEventListener('fragmenthidden', function(e) {
-    //var $el = $(e.fragment);
-});
+//Reveal.addEventListener('fragmentshown', function(e) {
+//    //var $el = $(e.fragment);
+//});
+//
+//Reveal.addEventListener('fragmenthidden', function(e) {
+//    //var $el = $(e.fragment);
+//});
 
 $('.next-btn').on('click', function (e) {
     e.stopPropagation();
