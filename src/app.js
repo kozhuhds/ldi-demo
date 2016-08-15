@@ -11,8 +11,8 @@ Reveal.initialize({
     height: 740,
     center: false,
     controls: false,
-    history: true,
-    //keyboard: false
+    //history: true,
+    keyboard: false
 });
 
 var stepIndex = 0,

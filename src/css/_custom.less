@@ -7,6 +7,12 @@ body{
 button{
   border: 0;
 }
+.no-margin{
+  margin: 0!important;
+}
+.floatfix{
+  overflow: hidden;
+}
 #overlay{
   cursor: pointer;
   position: absolute;
@@ -25,6 +31,10 @@ button{
     top: 50%;
     opacity: 0.3;
     text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
   #adjust{
@@ -97,10 +107,14 @@ button{
   cursor: pointer;
 
   &.red{
-    background: #ba000b;
+    background: @warning;
   }
   &.blue{
-    background: #436fb3;
+    background: @info;
+  }
+  &.green{
+    background: @green;
+    color: #ffffff !important;
   }
 }
 .inline{
@@ -116,18 +130,30 @@ button{
     .centered-fragments-item;
     left: 50%;
     top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
   .fragment-item-bottom{
     .centered-fragments-item;
     left: 50%;
     bottom: 130px;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
   }
   .fragment-item-top{
     .centered-fragments-item;
     left: 50%;
     top: 100px;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
   }
 }
@@ -141,7 +167,11 @@ button{
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
   .fragment{
     img{
       max-width: 100% !important;
@@ -155,6 +185,10 @@ button{
   position: absolute;
   left: 50%;
   top: 100px;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   width: 100%;
 }
@@ -164,6 +198,10 @@ button{
   padding: 30px !important;
   left: 50px;
   top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
   transform: translate(0, -50%);
   ul{
     margin: 0;
@@ -194,7 +232,7 @@ button{
     text-align: center;
     list-style: none;
     position: relative;
-    color: #4995d1;
+    color: @info;
     &:before, &:after{
       content: " ";
       position: absolute;
@@ -269,7 +307,7 @@ button{
   top: 0;
 }
 .green{
-  color: #008c00!important;
+  color: @green!important;
 }
 .block-3-sl-6{
   position: absolute;
@@ -277,7 +315,7 @@ button{
   left: 215px;
   .ret-money{
     border: 0;
-    background: #008c00;
+    background: @green;
     color: #ffffff;
     width: 233px;
     height: 60px;
@@ -299,15 +337,19 @@ button{
   text-align: left;
 }
 .warning{
-  color: #a70000 !important;
+  color: @warning !important;
 }
 .info{
-  color: #4995d1 !important;
+  color: @info !important;
 }
 .block-1-sl-8{
   position: absolute;
   bottom:44px;
   left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
 .block-2-sl-9, .block-3-sl-9{
@@ -328,22 +370,22 @@ button{
   -moz-border-radius: 100px;
   border-radius: 100px;
   &.warning{
-    border: 3px solid #a70000;
+    border: 3px solid @warning;
   }
   &.orange{
-    border: 3px solid #f79d28;
-    color: #f79d28;
+    border: 3px solid @yellow;
+    color: @yellow;
   }
   &.green{
-    border: 3px solid #008c00;
-    color: #008c00;
+    border: 3px solid @green;
+    color: @green;
   }
   &.yellow{
-    border: 3px solid #f7c600;
-    color: #f7c600;
+    border: 3px solid @light_yellow;
+    color: @light_yellow;
   }
   &.info{
-    border: 3px solid #4995d1;
+    border: 3px solid @info;
   }
 }
 .block-2-sl-11{
@@ -383,6 +425,7 @@ button{
   clear: both;
   text-align: left;
   .left-col{
+    position: relative;
     text-align: center;
     width: 248px;
     p{
@@ -399,16 +442,37 @@ button{
 .baskets{
   &.desc{
     .basket-item:nth-child(2){
-      transform: scale(0.8)
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      transform: scale(0.8);
     }
     .basket-item:nth-child(3){
-      transform: scale(0.7)
+      -webkit-transform: scale(0.7);
+      -moz-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+      -o-transform: scale(0.7);
+      transform: scale(0.7);
     }
     .basket-item:nth-child(4){
-      transform: scale(0.6)
+      -webkit-transform: scale(0.6);
+      -moz-transform: scale(0.6);
+      -ms-transform: scale(0.6);
+      -o-transform: scale(0.6);
+      transform: scale(0.6);
     }
     .basket-item:nth-child(5){
-      transform: scale(0.5)
+      -webkit-transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+      -o-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+  }
+  &.without-img{
+    .basket-item{
+      width: 133px;
     }
   }
   .basket-item{
@@ -432,4 +496,164 @@ button{
 .img-sl-13{
   width: 100px;
   margin-top: 112px !important;
+}
+.fund-block{
+  background: rgba(0,0,0,0.06);
+  left: 305px;
+  width: 140px;
+  height: 566px;
+  top: 12px;
+  position: absolute;
+  border: 2px solid @info !important;
+  -webkit-transition: all .7s ease;
+  transition: all .7s ease;
+
+  img{
+    width: 100px;
+    position: absolute;
+    bottom: -115px;
+    left: 19px;
+  }
+  .info{
+    font-size: 21px;
+    position: absolute;
+    top: -62px;
+    left: 27px;
+  }
+  &.moved{
+    left: 445px;
+  }
+}
+.right-arrow{
+  position: absolute;
+  right: -37px;
+  top: 47px;
+}
+.doc{
+  width: 647px;
+  height: 287px;
+  background: url(img/doc.png) no-repeat center;
+  position: absolute;
+  left: -36px;
+  top: 202px;
+  .date{
+    position: absolute;
+    right: 124px;
+    top: 29px;
+    font-size: 23px;
+  }
+  .sum{
+    position: absolute;
+    right: 39px;
+    top: 84px;
+    font-size: 15px;
+  }
+  .sum-word{
+    position: absolute;
+    left: 33px;
+    top: 114px;
+    font-size: 19px;
+  }
+  &.sl-16{
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);;
+    left: 545px;
+    top: 125px;
+  }
+  &.sl-17{
+    top: 160px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+}
+.block-1-sl-15{
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 464px;
+  text-align: left;
+}
+.scale-sl-15{
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);;
+}
+.block-1-sl-16{
+  position: absolute;
+  top: 135px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+.block-2-sl-16 {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+.block-4-sl-16, .block-5-sl-16{
+  position: absolute;
+  right: 131px;
+  top: 121px;
+  p{
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .arrow-left{
+    position: absolute;
+    left: -113px;
+    top: 19px;
+  }
+}
+.block-5-sl-16{
+  right: auto;
+  top: 130px;
+  left: 162px;
+  .arrow-right{
+    position: absolute;
+    right: -106px;
+    top: 21px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+.block-1-sl-17{
+  text-align: left;
+  position: absolute;
+  right: 0;
+  top: 452px;
+  p{
+    width: 628px;
+    margin-right: 20px;
+  }
+}
+.block-2-sl-17{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.block-3-sl-17{
+  width: 700px;
+  position: absolute;
+  left: 254px;
 }

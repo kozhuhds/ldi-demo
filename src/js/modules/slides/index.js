@@ -176,8 +176,10 @@ var slides = {
     },
     13: {
         steps: [
-            { delay: 144, cmd: Reveal.next },
-            { delay: 157, cmd: Reveal.next },
+            { delay: 130, cmd: Reveal.next },
+            { delay: 140, cmd: function () {
+                $('.fund-block').addClass('moved');
+            }},
             { delay: 161, cmd: Reveal.next }
 
         ],
@@ -198,19 +200,19 @@ var slides = {
     },
     15: {
         steps: [
-            { delay: 24, cmd: Reveal.next },
-            { delay: 44, cmd: Reveal.next },
-            { delay: 56, cmd: Reveal.next },
-            { delay: 104, cmd: Reveal.next }
+            { delay: 21, cmd: Reveal.next },
+            { delay: 39, cmd: Reveal.next },
+            { delay: 70, cmd: Reveal.next },
+            { delay: 100, cmd: Reveal.next }
         ],
         mediaType: AUDIO_TYPE
     },
     16: {
         steps: [
-            { delay: 2, cmd: Reveal.next },
-            { delay: 132, cmd: Reveal.next }
+            { delay: 123, cmd: Reveal.next },
+            { delay: 140, cmd: Reveal.next }
         ],
-        mediaType: AUDIO_TYPE
+        mediaType: VIDEO_TYPE
     }
 };
 
