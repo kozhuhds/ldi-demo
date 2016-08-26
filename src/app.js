@@ -4,6 +4,7 @@ var slides = require('./js/modules/slides').getSlides();
 var VIDEO_TYPE = require('./js/constants.js').VIDEO_TYPE;
 var AUDIO_TYPE = require('./js/constants.js').AUDIO_TYPE;
 var AUDIO_PATH = require('./js/constants.js').AUDIO_PATH;
+var Draggable = require ('Draggable');
 
 
 Reveal.initialize({
@@ -11,15 +12,17 @@ Reveal.initialize({
     height: 740,
     center: false,
     controls: false,
-    //history: true,
-    keyboard: false
+    history: true,
+    //keyboard: false
 });
 
 var stepIndex = 0,
     loopIndex = 0,
     isPlaying = false,
     mediaIsReady = false,
-    $audio = $('audio');
+    $audio = $('audio'),
+    $overlay = $('#overlay'),
+    $pauseBtn = $('.pause-btn');
 
 
 
@@ -28,13 +31,14 @@ var togglePlay  = function () {
         loadingMediaLoop();
         return
     }
-    var $overlay = $('#overlay');
 
     if(isPlaying) { //pause
+        $pauseBtn.removeClass('active');
         $overlay.css('display', 'block');
         isPlaying = false;
         changeMediaState('pause');
     } else{ //play
+        $pauseBtn.addClass('active');
         changeMediaState('play');
         $overlay.css('display', 'none');
         isPlaying = true;
@@ -42,23 +46,29 @@ var togglePlay  = function () {
     }
 };
 
-$(document).on('click', togglePlay);
+$overlay.on('click', togglePlay);
+$pauseBtn.on('click', togglePlay);
 $(AUDIO_TYPE)[0].onwaiting = togglePlay;
 $(VIDEO_TYPE)[0].onwaiting = togglePlay;
 
-//var initMedia = function () {
-//    var mediaType = slides[Reveal.getIndices().h].mediaType;
-//
-//    if(mediaType === AUDIO_TYPE) {
-//
-//    } else if(mediaType === VIDEO_TYPE) {
-//
-//    }
-//};
 
+$('.hobbies-list li').on('click', function () {
+    $(this).parent().find('.active').removeClass('active');
+    $(this).addClass("active");
+    $('.block-3-sl-4 ul li').eq(0)
+        .html("hobby: " + $(this).html())
+        .addClass("active");
+});
 
+$('.js-yes-btn, .js-no-btn').on('click', function () {
+    $('.js-yes-btn, .js-no-btn').css('display', 'none');
+});
 
-
+//slide 8
+$('.savings-table tr').on('click', function () {
+    $(this).parent().find('.active').removeClass('active');
+    $(this).addClass("active");
+});
 
 
 
@@ -74,6 +84,8 @@ var playLoop = function () {
                 //loopIndex = 0;
                 slides[currSlide].steps[stepIndex++].cmd();
             }
+        } else{
+            $pauseBtn.removeClass('active');
         }
         loopIndex++;
     }
@@ -114,6 +126,7 @@ loadingMediaLoop();
 
 Reveal.addEventListener('slidechanged', function(e) {
     console.log("SLIDE CHANGED");
+    $pauseBtn.addClass('active');
     mediaIsReady = false;
     stepIndex = 0;
     loopIndex = 0;
@@ -143,4 +156,12 @@ Reveal.addEventListener('ready', function() {
 $('.next-btn').on('click', function (e) {
     e.stopPropagation();
     Reveal.next();
+});
+
+new Draggable (document.getElementById('js-fund-block'),{
+    limit: {
+        x: [306, 865],
+        y: [0, 0]
+    }
+
 });

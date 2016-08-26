@@ -43,10 +43,10 @@ var slides = {
         steps: [
             { delay: 9, cmd: Reveal.next },
             { delay: 24, cmd: function () {
-                $('.block-1-sl-4 ul li').eq(3).addClass("active");
-                $('.block-3-sl-4 ul li').eq(0)
-                    .html("hobby: golfing")
-                    .addClass("active");
+                //$('.block-1-sl-4 ul li').eq(3).addClass("active");
+                //$('.block-3-sl-4 ul li').eq(0)
+                //    .html("hobby: golfing")
+                //    .addClass("active");
             } },
             { delay: 60, cmd: Reveal.next }
         ],
@@ -178,7 +178,7 @@ var slides = {
         steps: [
             { delay: 130, cmd: Reveal.next },
             { delay: 140, cmd: function () {
-                $('.fund-block').addClass('moved');
+                //$('.fund-block').addClass('moved');
             }},
             { delay: 161, cmd: Reveal.next }
 

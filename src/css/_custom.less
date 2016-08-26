@@ -203,12 +203,22 @@ button{
   -ms-transform: translate(0, -50%);
   -o-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  ul{
+  .hobbies-wrap{
+    overflow: hidden;
+  }
+  .hobbies-list{
+    height: 419px;
     margin: 0;
     text-align: right;
+    overflow-y: scroll;
+    margin-right: -32px;
     li{
-      padding: 5px 17px;
+      cursor: pointer;
+      padding: 5px 50px 5px 17px;
       list-style: none;
+      &:hover{
+        background: @hover_grey;
+      }
       &.active{
         background: #ccc;
       }
@@ -358,6 +368,12 @@ button{
 }
 .block-3-sl-9{
   font-size: 20px !important;
+  .savings-table-wrap{
+    height: 165px;
+    .savings-table{
+      height: 165px;
+    }
+  }
 }
 
 .circle{
@@ -498,15 +514,16 @@ button{
   margin-top: 112px !important;
 }
 .fund-block{
+  cursor: ew-resize;
   background: rgba(0,0,0,0.06);
   left: 305px;
   width: 140px;
   height: 566px;
-  top: 12px;
+  top: 0;
   position: absolute;
   border: 2px solid @info !important;
-  -webkit-transition: all .7s ease;
-  transition: all .7s ease;
+  -webkit-transition: none !important;
+  transition: none !important;
 
   img{
     width: 100px;
@@ -656,4 +673,57 @@ button{
   width: 700px;
   position: absolute;
   left: 254px;
+}
+.pause-btn{
+  z-index: 99999;
+  cursor: pointer;
+  outline: none;
+  &.active{
+    display: block;
+  }
+  display: none;
+  background: none;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 20px;
+  height: 26px;
+  &:hover{
+    &:after, &:before{
+      background: rgba(251,65,14,0.99);
+    }
+  }
+  &:after, &:before{
+    content: " ";
+    position: absolute;
+    width: 8px;
+    height: 26px;
+    background: #000;
+    left: 0;
+    top: 0;
+  }
+  &:after{
+    right: -2px;
+    left: auto;
+  }
+}
+.savings-table-wrap{
+  height: 400px;
+  overflow: hidden;
+  .savings-table{
+    tr{
+      &.active{
+        font-weight: bold;
+      }
+      &:hover{
+        background: @hover_grey;
+        cursor: pointer;
+      }
+    }
+    height: 400px;
+    display: block;
+    overflow-y: scroll;
+    margin-right: -30px;
+  }
 }
