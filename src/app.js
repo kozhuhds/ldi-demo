@@ -13,8 +13,10 @@ Reveal.initialize({
     center: false,
     controls: false,
     //history: true,
-    keyboard: false
+    keyboard: false,
+    progress: false
 });
+
 
 var stepIndex = 0,
     loopIndex = 0,
@@ -148,11 +150,11 @@ var slides = {
     },
     10: {
         steps: [
+            { delay: 20, cmd: Reveal.next },
             { delay: 24, cmd: Reveal.next },
             { delay: 28, cmd: Reveal.next },
             { delay: 32, cmd: Reveal.next },
             { delay: 36, cmd: Reveal.next },
-            { delay: 40, cmd: Reveal.next },
             { delay: 84, cmd: Reveal.next },
             { delay: 110, cmd: Reveal.next },
             { delay: 120, cmd: Reveal.next },
@@ -402,6 +404,7 @@ new Draggable (document.getElementById('js-fund-block'),{
         x: [306, 865],
         y: [0, 0]
     },
+    setPosition: false,
     onDrag: function (el, x, y, e) {
         $circles.forEach(function (circle) {
             if(circle.offsetLeft >= x && x + 140 >= circle.offsetLeft + 132) {
