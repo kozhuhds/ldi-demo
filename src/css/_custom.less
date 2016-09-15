@@ -462,6 +462,9 @@ button{
 .block-2-sl-12{
   width: 711px;
   white-space: nowrap;
+  @supports (-moz-appearance:meterbar) {
+    white-space: normal;
+  }
   .right-section{
     margin-right: -23px;
   }
