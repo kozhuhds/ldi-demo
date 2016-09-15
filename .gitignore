@@ -1,6 +1,5 @@
 .DS_Store
 .idea
-data
 node_modules
 dist
 *.log
