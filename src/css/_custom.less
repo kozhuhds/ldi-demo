@@ -229,6 +229,14 @@ button{
   }
 }
 .block-2-sl-4{
+  &.iefix{
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      height: 228px;
+    }
+    @supports (-ms-accelerator:true) {
+      height: 228px;
+    }
+  }
   width: 298px;
   position: absolute;
   top: 0;
@@ -414,6 +422,7 @@ button{
   }
 }
 .block-2-sl-11{
+  white-space: nowrap;
   .guarantees{
     margin-top: -593px !important;
   }
@@ -451,6 +460,17 @@ button{
   }
 }
 .block-2-sl-12{
+  width: 711px;
+  white-space: nowrap;
+  .right-section{
+    margin-right: -23px;
+  }
+  .right-sl-13{
+    margin-right: -66px;
+  }
+  .left-sl-13{
+    margin-left: -44px;
+  }
   p{
     text-align: center;
     font-size: 33px;
@@ -459,8 +479,6 @@ button{
     margin-top: 60px !important;
     margin-left: 17px !important;
   }
-  width: 692px;
-  overflow: hidden;
 }
 .block-3-sl-12{
   clear: both;
@@ -604,11 +622,31 @@ button{
 .img-sl-13{
   width: 100px;
   margin-top: -424px !important;
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    position: absolute;
+    top:100px;
+    left: 81px;
+  }
+  @supports (-ms-accelerator:true) {
+    position: absolute;
+    top: 100px;
+    left: 81px;
+  }
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                 not supported by any browser */
 }
 .fund-block{
+  .noselect;
   cursor: ew-resize;
   background: rgba(0,0,0,0.06);
-  left: 305px;
+  left: 295px;
   width: 140px;
   height: 566px;
   top: 0;
@@ -644,7 +682,7 @@ button{
   background: url(img/doc.png) no-repeat center;
   position: absolute;
   left: -36px;
-  top: 157px;
+  top: 82px;
   .date{
     position: absolute;
     right: 124px;
@@ -683,9 +721,18 @@ button{
   }
 }
 .block-1-sl-15{
+  h4{
+    font-size: 32px;
+    margin-bottom: 15px !important;
+  }
+  ul{
+    li{
+      font-size: 33px;
+    }
+  }
   position: absolute;
   left: 0;
-  bottom: 50px;
+  bottom: 83px;
   width: 464px;
   text-align: left;
 }
@@ -718,8 +765,16 @@ button{
 }
 .block-4-sl-16, .block-5-sl-16{
   position: absolute;
-  right: 131px;
-  top: 125px;
+  right: 105px;
+  top: 127px;
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    right: 119px;
+    top: 125px;
+  }
+  @supports (-ms-accelerator:true) {
+    right: 119px;
+    top: 125px;
+  }
   p{
     font-size: 20px;
     text-align: left;
@@ -731,10 +786,26 @@ button{
     top: 19px;
   }
 }
+.block-1-sl-10{
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    position: relative;
+  }
+  @supports (-ms-accelerator:true) {
+    position: relative;
+  }
+}
 .block-5-sl-16{
   right: auto;
-  top: 125px;
-  left: 162px;
+  top: 107px;
+  left: 160px;
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    top: 111px;
+    left: 165px;
+  }
+  @supports (-ms-accelerator:true) {
+    top: 111px;
+    left: 165px;
+  }
   .arrow-right{
     position: absolute;
     right: -106px;
@@ -754,6 +825,7 @@ button{
   p{
     width: 628px;
     margin-right: 20px;
+    font-size: 36px;
   }
 }
 .block-2-sl-17{
@@ -762,6 +834,9 @@ button{
   right: 0;
 }
 .block-3-sl-17{
+  h3{
+    font-size: 40px;
+  }
   width: 700px;
   position: absolute;
   left: 254px;
@@ -781,6 +856,12 @@ button{
   bottom: 20px;
   width: 20px;
   height: 26px;
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 25px;
+  }
+  @supports (-ms-accelerator:true) {
+    width: 25px;
+  }
   &:hover{
     &:after, &:before{
       background: rgba(251,65,14,0.99);
@@ -798,13 +879,34 @@ button{
   &:after{
     right: -2px;
     left: auto;
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      right: 2px;
+    }
+    @supports (-ms-accelerator:true) {
+      right: 2px;
+    }
   }
 }
 .savings-table-wrap{
   height: 400px;
   overflow: hidden;
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    overflow-y: scroll;
+  }
+  @supports (-ms-accelerator:true) {
+    overflow-y: scroll;
+  }
   .savings-table{
+
     tr{
+      th{
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          font-size: .7em;
+        }
+        @supports (-ms-accelerator:true) {
+          font-size: .7em;
+        }
+      }
       &.active{
         font-weight: bold;
       }
@@ -831,5 +933,44 @@ button{
     transform: scale(1.1);
     -webkit-transition: all .2s ease;
     transition: all .2s ease;
+  }
+}
+.edge-14{
+  .savings-table-wrap{
+      overflow-y: scroll;
+    .savings-table{
+      tr{
+        th{
+            font-size: .7em;
+        }
+      }
+    }
+  }
+  .pause-btn{
+      width: 25px;
+    &:after{
+        right: 2px;
+    }
+  }
+  .block-4-sl-16{
+      right: 119px;
+      top: 125px;
+  }
+  .block-5-sl-16{
+      top: 111px;
+      left: 165px;
+  }
+  .block-1-sl-10{
+      position: relative;
+  }
+  .img-sl-13{
+      position: absolute;
+      top:100px;
+      left: 81px;
+  }
+  .block-2-sl-4{
+    &.iefix{
+        height: 228px;
+    }
   }
 }

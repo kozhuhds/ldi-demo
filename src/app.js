@@ -3,7 +3,15 @@ var $ = require('jbone');
 var VIDEO_TYPE = require('./js/constants.js').VIDEO_TYPE;
 var AUDIO_TYPE = require('./js/constants.js').AUDIO_TYPE;
 var AUDIO_PATH = require('./js/constants.js').AUDIO_PATH;
-var Draggable = require ('Draggable');
+var Draggable = require ('./js/lib/draggable.js');
+var detectIE = require('./js/detectie.js').detectIE;
+
+
+var isEdge14 = detectIE() === 14;
+
+if (isEdge14) {
+    $('body').addClass("edge-14");
+}
 
 
 
@@ -311,7 +319,7 @@ $('.savings-table tr').on('click', function () {
 var playLoop = function () {
     isFinished = false;
     var currSlide = null;
-    console.log(loopIndex);
+    //console.log(loopIndex);
     if (isPlaying && mediaIsReady) {
         currSlide = Reveal.getIndices().h;
 
@@ -340,7 +348,7 @@ var changeMediaState = function (action) {
 };
 
 var loadingMediaLoop = function (slideIndex) {
-    console.log("loading...", $audio[0].readyState );
+    //console.log("loading...", $audio[0].readyState );
     var indexh = slideIndex || Reveal.getIndices().h;
     var mediaType = slides[indexh].mediaType;
 
@@ -401,7 +409,7 @@ var $circleItems = $('.circle-items'),
 
 new Draggable (document.getElementById('js-fund-block'),{
     limit: {
-        x: [306, 865],
+        x: [295, 865],
         y: [0, 0]
     },
     setPosition: false,
